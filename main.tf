@@ -1,9 +1,7 @@
 provider "aws" {
   region = "us-west-2"
 }
-resource "aws_s3_bucket" "b" {
-  bucket = "my524bucket5omar5hamdaa"
-}
+
 
 resource "aws_vpc" "main" {
 		cidr_block = "10.0.0.0/24"
