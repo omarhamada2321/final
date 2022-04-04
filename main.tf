@@ -106,14 +106,8 @@ resource "aws_security_group" "public-sg" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }  
-
-    vpc_id = aws_vpc.main.id
-
-    tags = {
-        Name = "public-sg"
-    }
-
 }
+   
 resource "aws_instance" "web" {
  ami = "ami-00ee4df451840fa9d"
   instance_type = "t2.micro"
