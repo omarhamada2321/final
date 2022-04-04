@@ -71,8 +71,8 @@ terraform {
    bucket = "my524bucket5omar5hamdaa"
   }
 }
-resource "aws_security_group" "public-sg" {
-    name = "public-sg"
+resource "aws_security_group" "public" {
+    name = "public"
     description = "Allow connection to public instances connections."
 
     ingress {
@@ -111,7 +111,7 @@ resource "aws_security_group" "public-sg" {
 resource "aws_instance" "web" {
  ami = "ami-00ee4df451840fa9d"
   instance_type = "t2.micro"
-  vpc_security_group_ids = [aws_security_group.public-sg.id]
+  vpc_security_group_ids = [aws_security_group.public.id]
   tags = {
     Name = "web_server"
   }
